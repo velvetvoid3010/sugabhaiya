@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Suga Bhaiya - Vintage Rakshabandhan Wish</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+  :root {
+    --bg-color: #2e2e2e;
+    --text-mint: #a3d2ca;
+    --text-offwhite: #f1f1f1;
+    --accent-beige: #d9cbb6;
+    --frame-shadow: rgba(217, 203, 182, 0.6);
+  }
+
+  body, html {
+    margin: 0; padding: 0;
+    height: 100%;
+    background: var(--bg-color);
+    color: var(--text-mint);
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 650px;
+    background: #393939;
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px var(--frame-shadow);
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  /* Polaroid image frame */
+  .polaroid {
+    background: var(--accent-beige);
+    padding: 12px 12px 30px 12px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+    width: 180px;
+    flex-shrink: 0;
+    transform-origin: center bottom;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  .polaroid:hover {
+    transform: scale(1.08) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.9);
+  }
+  .polaroid img {
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+  }
+  .caption {
+    text-align: center;
+    margin-top: 12px;
+    color: var(--bg-color);
+    font-family: 'Georgia', serif;
+    font-weight: 600;
+  }
+
+  .message {
+    flex: 1;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-offwhite);
+    position: relative;
+    min-height: 110px;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* Typing animation */
+  .typing-text {
+    white-space: pre-wrap;
+    border-right: 2px solid var(--text-mint);
+    animation: typing 5s steps(60, end) forwards, blinkCaret 0.75s step-end infinite;
+    overflow: hidden;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blinkCaret {
+    50% { border-color: transparent; }
+  }
+
+  /* Floating music note */
+  .music-note {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    font-size: 1.8rem;
+    color: var(--accent-beige);
+    animation: floatNote 3.5s ease-in-out infinite;
+    user-select: none;
+  }
+
+  @keyframes floatNote {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="region" aria-label="Suga Bhaiya Rakshabandhan Wish">
+    <div class="polaroid" tabindex="0" aria-label="Photo of Yoongi">
+      <img src="images/yoongi-polaroid.jpg" alt="Yoongi smiling" />
+      <div class="caption">Yoongi Bhaiya</div>
+    </div>
+    <div class="message" aria-live="polite">
+      <div class="typing-text" aria-label="Rakshabandhan message">
+        Happy Rakshabandhan, Yoongi bhaiya 💜
+        Your calm presence and thoughtful words are so comforting. You’ve been like that quiet, protective brother who’s always there.
+      </div>
+      <div class="music-note" aria-hidden="true">🎵</div>
+    </div>
+  </div>
+</body>
+</html>
